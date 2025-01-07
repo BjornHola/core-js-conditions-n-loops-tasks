@@ -108,10 +108,22 @@ console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 }));
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return false;
+  }
+  if (a + b <= c || a + c <= b || b + c <= a) {
+    return false;
+  }
+  return a === b || a === c || b === c;
 }
-
+console.log(isIsoscelesTriangle(1, 2, 3));
+console.log(isIsoscelesTriangle(3, 1, 2));
+console.log(isIsoscelesTriangle(2, 3, 2));
+console.log(isIsoscelesTriangle(3, 2, 2));
+console.log(isIsoscelesTriangle(2, 2, 3));
+console.log(isIsoscelesTriangle(2, 2, 5));
+console.log(isIsoscelesTriangle(3, 0, 3));
 /**
  * Converts a number to Roman numerals. The number will be between 1 and 39.
  * In this task, the use of methods of the String and Array classes is not allowed.
