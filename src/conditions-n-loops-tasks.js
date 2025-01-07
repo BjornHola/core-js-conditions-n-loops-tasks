@@ -45,10 +45,18 @@ console.log(isPositive(-5));
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  }
+  if (b > a && b > c) {
+    return b;
+  }
+  return c;
 }
-
+console.log(getMaxNumber(1, 2, 3));
+console.log(getMaxNumber(-5, 0, 5));
+console.log(getMaxNumber(-0.1, 0, 0.2));
 /**
  * Checks if a queen can capture a king in the next move on an 8x8 chessboard.
  * See more details at https://en.wikipedia.org/wiki/Queen_(chess)
@@ -67,10 +75,21 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  if (
+    queen.x === king.x ||
+    queen.y === king.y ||
+    queen.x - king.x === queen.y - king.y ||
+    queen.x - king.x === king.y - queen.y
+  ) {
+    return true;
+  }
+  return false;
 }
-
+console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 5, y: 5 }));
+console.log(canQueenCaptureKing({ x: 2, y: 1 }, { x: 2, y: 8 }));
+console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 }));
+console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 }));
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
  * In this task, the use of methods of the String and Array classes is not allowed.
