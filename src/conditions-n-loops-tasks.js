@@ -187,10 +187,63 @@ console.log(convertToRomanNumerals(26));
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let digitToString = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const t = numberStr[i];
+    switch (t) {
+      case '0':
+        digitToString += 'zero';
+        break;
+      case '1':
+        digitToString += 'one';
+        break;
+      case '2':
+        digitToString += 'two';
+        break;
+      case '3':
+        digitToString += 'three';
+        break;
+      case '4':
+        digitToString += 'four';
+        break;
+      case '5':
+        digitToString += 'five';
+        break;
+      case '6':
+        digitToString += 'six';
+        break;
+      case '7':
+        digitToString += 'seven';
+        break;
+      case '8':
+        digitToString += 'eight';
+        break;
+      case '9':
+        digitToString += 'nine';
+        break;
+      case '-':
+        digitToString += 'minus';
+        break;
+      case '.':
+      case ',':
+        digitToString += 'point';
+        break;
+      default:
+        break;
+    }
+    if (i < numberStr.length - 1) {
+      digitToString += ' ';
+    }
+  }
+  return digitToString;
 }
-
+console.log(convertNumberToString('1'));
+console.log(convertNumberToString('10'));
+console.log(convertNumberToString('-10'));
+console.log(convertNumberToString('10.5'));
+console.log(convertNumberToString('10,5'));
+console.log(convertNumberToString('1950.2'));
 /**
  * Determines whether a string is a palindrome.
  * In this task, the use of methods of the String and Array classes is not allowed.
