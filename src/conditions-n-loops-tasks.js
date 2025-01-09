@@ -285,10 +285,18 @@ console.log(isPalindrome('qweqwe'));
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  for (let number = 0; number < str.length; number += 1) {
+    if (letter === str[number]) {
+      return number;
+    }
+  }
+  return -1;
 }
-
+console.log(getIndexOf('qwerty', 'q'));
+console.log(getIndexOf('qwerty', 't'));
+console.log(getIndexOf('qwerty', 'Q'));
+console.log(getIndexOf('qwerty', 'p'));
 /**
  * Checks if a number contains a specific digit.
  * In this task, the use of methods of the String and Array classes is not allowed.
