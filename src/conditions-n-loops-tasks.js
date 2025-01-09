@@ -312,9 +312,22 @@ console.log(getIndexOf('qwerty', 'p'));
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  let result = num;
+  while (result > 0) {
+    const t = result % 10;
+    if (digit === t) {
+      return true;
+    }
+    result = Math.floor(result / 10);
+  }
+  return false;
 }
+console.log(isContainNumber(123450, 5));
+console.log(isContainNumber(123450, 1));
+console.log(isContainNumber(123450, 5));
+console.log(isContainNumber(12345, 0));
+console.log(isContainNumber(12345, 6));
 
 /**
  * Finds the index of an element in an array where the sum of elements to the left equals the sum of elements to the right.
