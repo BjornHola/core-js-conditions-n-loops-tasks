@@ -25,4 +25,12 @@ module.exports = {
   plugins: ['prettier'],
   ignorePatterns: ['extensions/utility.js'],
   noInlineConfig: true,
+  overrides: [
+    {
+      files: ['src/conditions-n-loops-tasks.js'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+  ],
 };

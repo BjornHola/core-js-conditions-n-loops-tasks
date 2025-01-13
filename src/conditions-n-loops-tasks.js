@@ -27,7 +27,6 @@ function isPositive(number) {
   }
   return false;
 }
-
 console.log(isPositive(10));
 console.log(isPositive(0));
 console.log(isPositive(-5));
