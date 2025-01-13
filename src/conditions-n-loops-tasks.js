@@ -27,9 +27,9 @@ function isPositive(number) {
   }
   return false;
 }
-console.log(isPositive(10));
-console.log(isPositive(0));
-console.log(isPositive(-5));
+isPositive(10);
+isPositive(0);
+isPositive(-5);
 
 /**
  * Returns the maximum of three numbers without using Array and Math classes methods.
@@ -53,9 +53,9 @@ function getMaxNumber(a, b, c) {
   }
   return c;
 }
-console.log(getMaxNumber(1, 2, 3));
-console.log(getMaxNumber(-5, 0, 5));
-console.log(getMaxNumber(-0.1, 0, 0.2));
+getMaxNumber(1, 2, 3);
+getMaxNumber(-5, 0, 5);
+getMaxNumber(-0.1, 0, 0.2);
 /**
  * Checks if a queen can capture a king in the next move on an 8x8 chessboard.
  * See more details at https://en.wikipedia.org/wiki/Queen_(chess)
@@ -85,10 +85,10 @@ function canQueenCaptureKing(queen, king) {
   }
   return false;
 }
-console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 5, y: 5 }));
-console.log(canQueenCaptureKing({ x: 2, y: 1 }, { x: 2, y: 8 }));
-console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 }));
-console.log(canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 }));
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 5, y: 5 });
+canQueenCaptureKing({ x: 2, y: 1 }, { x: 2, y: 8 });
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 });
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 });
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -116,13 +116,13 @@ function isIsoscelesTriangle(a, b, c) {
   }
   return a === b || a === c || b === c;
 }
-console.log(isIsoscelesTriangle(1, 2, 3));
-console.log(isIsoscelesTriangle(3, 1, 2));
-console.log(isIsoscelesTriangle(2, 3, 2));
-console.log(isIsoscelesTriangle(3, 2, 2));
-console.log(isIsoscelesTriangle(2, 2, 3));
-console.log(isIsoscelesTriangle(2, 2, 5));
-console.log(isIsoscelesTriangle(3, 0, 3));
+isIsoscelesTriangle(1, 2, 3);
+isIsoscelesTriangle(3, 1, 2);
+isIsoscelesTriangle(2, 3, 2);
+isIsoscelesTriangle(3, 2, 2);
+isIsoscelesTriangle(2, 2, 3);
+isIsoscelesTriangle(2, 2, 5);
+isIsoscelesTriangle(3, 0, 3);
 /**
  * Converts a number to Roman numerals. The number will be between 1 and 39.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -166,11 +166,11 @@ function convertToRomanNumerals(num) {
   }
   return roman;
 }
-console.log(convertToRomanNumerals(1));
-console.log(convertToRomanNumerals(2));
-console.log(convertToRomanNumerals(5));
-console.log(convertToRomanNumerals(10));
-console.log(convertToRomanNumerals(26));
+convertToRomanNumerals(1);
+convertToRomanNumerals(2);
+convertToRomanNumerals(5);
+convertToRomanNumerals(10);
+convertToRomanNumerals(26);
 /**
  * Converts a number to a string, replacing digits with words.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -237,12 +237,12 @@ function convertNumberToString(numberStr) {
   }
   return digitToString;
 }
-console.log(convertNumberToString('1'));
-console.log(convertNumberToString('10'));
-console.log(convertNumberToString('-10'));
-console.log(convertNumberToString('10.5'));
-console.log(convertNumberToString('10,5'));
-console.log(convertNumberToString('1950.2'));
+convertNumberToString('1');
+convertNumberToString('10');
+convertNumberToString('-10');
+convertNumberToString('10.5');
+convertNumberToString('10,5');
+convertNumberToString('1950.2');
 /**
  * Determines whether a string is a palindrome.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -267,9 +267,9 @@ function isPalindrome(str) {
   }
   return true;
 }
-console.log(isPalindrome('abcba'));
-console.log(isPalindrome('0123210'));
-console.log(isPalindrome('qweqwe'));
+isPalindrome('abcba');
+isPalindrome('0123210');
+isPalindrome('qweqwe');
 /**
  * Finds the first occurrence of a letter in a string.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -292,10 +292,10 @@ function getIndexOf(str, letter) {
   }
   return -1;
 }
-console.log(getIndexOf('qwerty', 'q'));
-console.log(getIndexOf('qwerty', 't'));
-console.log(getIndexOf('qwerty', 'Q'));
-console.log(getIndexOf('qwerty', 'p'));
+getIndexOf('qwerty', 'q');
+getIndexOf('qwerty', 't');
+getIndexOf('qwerty', 'Q');
+getIndexOf('qwerty', 'p');
 /**
  * Checks if a number contains a specific digit.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -322,11 +322,11 @@ function isContainNumber(num, digit) {
   }
   return false;
 }
-console.log(isContainNumber(123450, 5));
-console.log(isContainNumber(123450, 1));
-console.log(isContainNumber(123450, 5));
-console.log(isContainNumber(12345, 0));
-console.log(isContainNumber(12345, 6));
+isContainNumber(123450, 5);
+isContainNumber(123450, 1);
+isContainNumber(123450, 5);
+isContainNumber(12345, 0);
+isContainNumber(12345, 6);
 
 /**
  * Finds the index of an element in an array where the sum of elements to the left equals the sum of elements to the right.
@@ -356,9 +356,9 @@ function getBalanceIndex(arr) {
   }
   return -1;
 }
-console.log(getBalanceIndex([1, 2, 5, 3, 0]));
-console.log(getBalanceIndex([2, 3, 9, 5]));
-console.log(getBalanceIndex([1, 2, 3, 4, 5]));
+getBalanceIndex([1, 2, 5, 3, 0]);
+getBalanceIndex([2, 3, 9, 5]);
+getBalanceIndex([1, 2, 3, 4, 5]);
 /**
  * Generates a spiral matrix of a given size, filled with numbers in ascending order starting from one.
  * The direction of filling with numbers is clockwise.
