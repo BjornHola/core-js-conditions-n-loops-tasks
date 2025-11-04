@@ -21,10 +21,10 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  return number >= 0;
 }
-
+isPositive(-5);
 /**
  * Returns the maximum of three numbers without using Array and Math classes methods.
  *
@@ -38,9 +38,16 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  }
+  if (b > a && b > c) {
+    return b;
+  }
+  return c;
 }
+getMaxNumber(1, 2, 3);
 
 /**
  * Checks if a queen can capture a king in the next move on an 8x8 chessboard.
@@ -61,9 +68,21 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  if (
+    queen.x === king.x ||
+    queen.y === king.y ||
+    queen.x - king.x === queen.y - king.y ||
+    queen.x - king.x === king.y - queen.y
+  ) {
+    return true;
+  }
+  return false;
 }
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 5, y: 5 });
+canQueenCaptureKing({ x: 2, y: 1 }, { x: 2, y: 8 });
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 });
+canQueenCaptureKing({ x: 1, y: 1 }, { x: 2, y: 8 });
 
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
@@ -83,10 +102,27 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
-}
+function isIsoscelesTriangle(a, b, c) {
+  if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c))
+    return 'Not a number';
 
+  if (a === 0 || b === 0 || c === 0) return false;
+
+  switch (true) {
+    case a === b && a + b > c:
+      return true;
+
+    case a === c && a + c > b:
+      return true;
+
+    case b === c && b + c > a:
+      return true;
+
+    default:
+      return false;
+  }
+}
+isIsoscelesTriangle(1, 2, 3);
 /**
  * Converts a number to Roman numerals. The number will be between 1 and 39.
  * In this task, the use of methods of the String and Array classes is not allowed.
