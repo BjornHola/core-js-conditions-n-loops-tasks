@@ -137,10 +137,41 @@ isIsoscelesTriangle(1, 2, 3);
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
-}
+function convertToRomanNumerals(num) {
+  if (Number.isNaN(num)) return 'Not a number';
+  if (num < 1 || num > 39) return '';
 
+  let result = '';
+
+  const tenpart = Math.floor(num / 10);
+  if (tenpart === 1) {
+    result += 'X';
+  }
+  if (tenpart > 1) {
+    for (let i = 0; i <= tenpart - 1; i += 1) {
+      result += 'X';
+    }
+  }
+
+  const onepart = num % 10;
+  if (onepart === 9) {
+    result += 'IX';
+  } else if (onepart >= 5) {
+    result += 'V';
+    for (let i = 0; i < onepart - 5; i += 1) {
+      result += 'I';
+    }
+  } else if (onepart === 4) {
+    result += 'IV';
+  } else {
+    for (let i = 0; i < onepart; i += 1) {
+      result += 'I';
+    }
+  }
+  return result;
+}
+convertToRomanNumerals(1);
+convertToRomanNumerals(18);
 /**
  * Converts a number to a string, replacing digits with words.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -156,8 +187,63 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+  let firstWord = true;
+
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const char = numberStr[i];
+    let word = '';
+
+    switch (char) {
+      case '0':
+        word += 'zero';
+        break;
+      case '1':
+        word += 'one';
+        break;
+      case '2':
+        word += 'two';
+        break;
+      case '3':
+        word += 'three';
+        break;
+      case '4':
+        word += 'four';
+        break;
+      case '5':
+        word += 'five';
+        break;
+      case '6':
+        word += 'six';
+        break;
+      case '7':
+        word += 'seven';
+        break;
+      case '8':
+        word += 'eight';
+        break;
+      case '9':
+        word += 'nine';
+        break;
+      case '-':
+        word += 'minus';
+        break;
+      case '.':
+      case ',':
+        word += 'point';
+        break;
+      default:
+        return false;
+    }
+
+    if (!firstWord) {
+      result += ' ';
+    }
+    result += word;
+    firstWord = false;
+  }
+  return result;
 }
 
 /**
