@@ -311,8 +311,15 @@ function getIndexOf(str, letter) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  const numStr = `${num}`;
+  const digitStr = `${digit}`;
+  for (let i = 0; i < numStr.length; i += 1) {
+    if (numStr[i] === digitStr) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -328,8 +335,23 @@ function isContainNumber(/* num, digit */) {
  *  [2, 3, 9, 5] => 2       => 2 + 3 === 5 then balance element is 9 and its index = 2
  *  [1, 2, 3, 4, 5] => -1   => no balance element
  */
-function getBalanceIndex(/* arr */) {
-  throw new Error('Not implemented');
+function getBalanceIndex(arr) {
+  if (arr == null) return -1;
+  if (arr.length < 3) return -1;
+
+  let leftSum = 0;
+  let totalSum = 0;
+
+  for (let i = 0; i < arr.length; i += 1) {
+    totalSum += arr[i];
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    const rightSum = totalSum - leftSum - arr[i];
+    if (leftSum === rightSum) return i;
+    leftSum += arr[i];
+  }
+
+  return -1;
 }
 
 /**
@@ -392,6 +414,37 @@ function rotateMatrix(/* matrix */) {
  */
 function sortByAsc(/* arr */) {
   throw new Error('Not implemented');
+  // if (!Array.isArray(arr)) return 'Not array';
+
+  // if (arr.length <= 1) return arr;
+
+  // const copyarr = arr;
+
+  // function quick(left, right) {
+  //   if (left >= right) return;
+
+  //   let i = left;
+  //   let j = right;
+
+  //   const pivot = copyarr[Math.floor(copyarr.length / 2)];
+
+  //   while (i <= j) {
+  //     while (i < pivot) i += 1;
+  //     while (j > pivot) j -= 1;
+
+  //     if (i <= j) {
+  //       const t = copyarr[i];
+  //       copyarr[i] = copyarr[j];
+  //       copyarr[j] = t;
+  //       i += 1;
+  //       j -= 1;
+  //     }
+  //   }
+  //   quick(left, j);
+  //   quick(i, right);
+  // }
+  // quick(0, arr.length - 1);
+  // return arr;
 }
 
 /**
@@ -413,6 +466,35 @@ function sortByAsc(/* arr */) {
  */
 function shuffleChar(/* str, iterations */) {
   throw new Error('Not implemented');
+  // let reps = iterations;
+  // if (typeof str !== 'string') return 'Not a string';
+  // if (reps <= 0 || str.length < 2) return str;
+
+  // function shuffle(s) {
+  //   let even = '';
+  //   let odd = '';
+  //   for (let i = 0; i < s.length; i += 1) {
+  //     if (i % 2 === 0) even += s[i];
+  //     else odd += s[i];
+  //   }
+  //   return even + odd;
+  // }
+  // let seen = shuffle(str);
+  // let period = 1;
+
+  // while (seen !== str) {
+  //   seen = shuffle(seen);
+  //   period += 1;
+  // }
+
+  // reps %= period;
+
+  // let result = str;
+  // for (let i = 0; i < iterations; i += 1) {
+  //   result = shuffle(result);
+  // }
+
+  // return result;
 }
 
 /**
